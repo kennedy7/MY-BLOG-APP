@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>BLOG</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/send_url.js"></script>
+  </head>
+  <body>
+    <%- include ('header'); %>
+
+    <ul>
+        <% if(messages.success_msg) { %>
+        <li><%= messages.success_msg %></li>
+        <% } %>
+      </ul>
+      <ul>
+        <% if(messages.error) { %>
+        <li><%= messages.error %></li>
+        <% } %>
+      </ul>
+    <main>
+      <ul class="list">
+      <% articles.forEach((article) => { %>
+        <li>
+          <!-- Display the members only badge when the article.category is limited -->
+          <% if (article.category === 'limited') {%>
+            <i>MEMBERS ONLY</i>
+          <% } %>
+          <h2><%= article.title %></h2>
+          <p><%= article.summary %></p>
+          <a href="/article/<%=article.id %>">Read more</a>
+        </li>
+      <% }) %>
+      </ul>
+    </main>
+  </body>
+</html>

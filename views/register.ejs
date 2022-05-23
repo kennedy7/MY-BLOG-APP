@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>BLOG</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/send_url.js"></script>
+  </head>
+  <body>    
+
+    <div class="sign">
+      <div class="container">
+        <h1><a href="/list">BLOG</a></h1>
+        <div class="panel">
+          <h2>Log in</h2>
+          <ul>
+            <% if(typeof errors != 'undefined'){ %><% errors.forEach(error=>{ %>
+              <li><%=  error.message %> </li>
+              <% }) %> <%}%>
+        </ul>
+          <form action="/signup" method="post">
+            <p>Name</p>
+            <input type="text" name ="name">
+            <p>Email</p>
+            <input type="email" name ="email">
+            <p>Password</p>
+            <input type="password" name="password">
+            <p>Confirm Password</p>
+            <input type="password" name="password2">
+            <input type="submit" value="Sign Up">
+            <a href="/list">Back to articles</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
