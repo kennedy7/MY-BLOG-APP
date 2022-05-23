@@ -11,12 +11,14 @@
       <div class="container">
         <h1><a href="/list">BLOG</a></h1>
         <div class="panel">
-          <h2>Log in</h2>
-          <ul>
-            <% if(typeof errors != 'undefined'){ %><% errors.forEach(error=>{ %>
+          <h2>Sign up</h2>
+          <% if(typeof errors != 'undefined'){ %>
+          <ul class="errors">
+            <% errors.forEach(error=>{ %>
               <li><%=  error.message %> </li>
-              <% }) %> <%}%>
+              <% }) %> 
         </ul>
+        <%}%>
           <form action="/signup" method="post">
             <p>Name</p>
             <input type="text" name ="name">
