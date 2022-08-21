@@ -11,6 +11,7 @@ const bodyParser = require("body-parser")
 const initializePassport = require("./passportConfig");
 initializePassport(passport);
 
+//view engine
 app.set("view engine", "ejs");
 
 app.use(express.static('public'));

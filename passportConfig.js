@@ -21,11 +21,9 @@ const authenticateUser = (email, password, done)=>{
                         throw err
                     }
                     if (isMatch){
-                        (req, res)=>{
-                            req.session.userId = results[0].id;
-                            req.session.name = results[0].name;
-                        }                    
+                        
                         return done (null, user);
+                        
                         
                     }else{
                         return done(null, false, {message: 'Password does not match user'})

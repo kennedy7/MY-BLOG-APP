@@ -31,7 +31,7 @@
             <i>MEMBERS ONLY</i>
             <h1><%= article.title %></h1>
             
-            <!-- Create an if statement with locals.isLoggedin as the conditional expression -->
+            <!-- if statement isAuth as the conditional expression -->
             <% if (isAuthenticated) { %>
               <p><%= article.content %></p>
             <% } else { %>

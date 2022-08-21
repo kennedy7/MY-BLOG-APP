@@ -20,26 +20,26 @@ exports.signupUser = async function (req, res) {
   
     let errors = [];
   
-    if (!name || !email || !password || !password2) {
-      errors.push({
-        message: "please enter all fields"
-      });
-    }
-    if (password.length < 6) {
-      errors.push({
-        message: "password should be atleast 6 characters"
-      });
-    }
-    if (password != password2) {
-      errors.push({
-        message: " passwords do not match"
-      });
-    }
-    if (errors.length > 0) {
-      res.render("register", {
-        errors
-      });
-    } else {
+      if (!name || !email || !password || !password2) {
+        errors.push({
+          message: "please enter all fields"
+        });
+      }
+      if (password.length < 6) {
+        errors.push({
+          message: "password should be atleast 6 characters"
+        });
+      }
+      if (password != password2) {
+        errors.push({
+          message: " passwords do not match"
+        });
+      }
+      if (errors.length > 0) {
+        res.render("register", {
+          errors
+        });
+      } else {
       //Form validation successful
       let hashedPassword = await bcrypt.hash(password, 10);
       console.log(hashedPassword);
